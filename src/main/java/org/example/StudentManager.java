@@ -79,16 +79,22 @@ public class StudentManager {
     }
 
     // Поиск студента по имени
-    public void searchStudentByName(String name) throws SQLException {
+    public String searchStudentByName(String name) throws SQLException {
         #sql iterator StudentIter (int id, String name, String email, String group_name);
         StudentIter iter;
         #sql [ctx] iter = {
                 SELECT * FROM search_student_by_name(:name);
         };
+        StringBuilder result = new StringBuilder();
         while (iter.next()) {
-            System.out.println("ID: " + iter.id() + ", Name: " + iter.name() + ", Email: " + iter.email() + ", Group: " + iter.group_name());
+            result.append("ID: ").append(iter.id())
+                    .append(", Name: ").append(iter.name())
+                    .append(", Email: ").append(iter.email())
+                    .append(", Group: ").append(iter.group_name())
+                    .append("\n");
         }
         iter.close();
+        return result.toString();
     }
 
     // Обновление студента
