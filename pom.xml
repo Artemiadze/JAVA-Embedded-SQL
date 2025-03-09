@@ -14,11 +14,25 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>oracle</id>
+            <url>https://maven.oracle.com</url>
+        </repository>
+    </repositories>
+
+
     <dependencies>
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.7.5</version>
+
+        </dependency>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>sqlj</artifactId>
+            <version>9.0.0</version>
         </dependency>
     </dependencies>
 
