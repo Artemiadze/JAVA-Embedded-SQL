@@ -98,9 +98,9 @@ public class StudentManager {
     }
 
     // Обновление студента
-    public void updateStudent(int id, String name, String email, String group) throws SQLException {
+    public void updateStudent(String name, String email, String group) throws SQLException {
         #sql [ctx] {
-            SELECT update_student(:id, :name, :email, :group);
+            SELECT update_student(:name, :email, :group);
         };
         System.out.println("Данные студента обновлены.");
     }

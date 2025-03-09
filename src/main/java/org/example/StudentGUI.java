@@ -2,6 +2,7 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class StudentGUI extends JFrame {
@@ -69,7 +70,7 @@ public class StudentGUI extends JFrame {
     }
 
     // Методы обработки событий
-    private void addStudent() {
+    private void addStudent() throws SQLException {
         String name = nameField.getText();
         String email = emailField.getText();
         String group = groupField.getText();
@@ -77,7 +78,7 @@ public class StudentGUI extends JFrame {
         outputArea.setText("Студент добавлен: " + name);
     }
 
-    private void searchStudent() {
+    private void searchStudent() throws SQLException {
         String name = searchField.getText();
         String result = dbManager.searchStudentByName(name);
         outputArea.setText(result);
@@ -87,7 +88,7 @@ public class StudentGUI extends JFrame {
         }
     }
 
-    private void updateStudent() {
+    private void updateStudent() throws SQLException {
         String name = nameField.getText();
         String email = emailField.getText();
         String group = groupField.getText();
@@ -95,7 +96,7 @@ public class StudentGUI extends JFrame {
         outputArea.setText("Студент обновлён: " + name);
     }
 
-    private void deleteStudent() {
+    private void deleteStudent() throws SQLException {
         String name = searchField.getText();
         dbManager.deleteStudentByEmail(name);
         outputArea.setText("Студент удалён: " + name);
