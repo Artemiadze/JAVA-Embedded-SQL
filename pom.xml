@@ -22,26 +22,22 @@
             <version>42.7.5</version>
 
         </dependency>
-        <!-- SQLJ зависимости (добавим вручную, так как нет в Maven Central) -->
         <dependency>
-            <groupId>com.oracle.sqlj</groupId>
+            <groupId>com.oracle</groupId>
             <artifactId>sqlj</artifactId>
-            <version>12.2.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/sqlj.jar</systemPath>
+            <version>9.0.0</version>
         </dependency>
+
         <dependency>
-            <groupId>com.oracle.sqlj</groupId>
-            <artifactId>runtime12</artifactId>
-            <version>12.2.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/runtime12.jar</systemPath>
+            <groupId>com.oracle</groupId>
+            <artifactId>sqlj-runtime</artifactId>
+            <version>9.0.0</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Плагин для компиляции Java -->
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
