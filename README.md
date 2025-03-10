@@ -34,8 +34,8 @@
 
 ### Клонирование репозитория
 ```
-git clone https://github.com/Artemiadze/JAVA_JBDC.git
-cd JAVA_JBDC
+git clone https://github.com/Artemiadze/JAVA-Embedded-SQL.git
+cd JAVA_Embedded_SQL
 ```
 
 ### Запуск приложения
